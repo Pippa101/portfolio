@@ -1,14 +1,18 @@
+import { Link } from "react-router-dom";
+
 const Homepage = () => {
   return (
     <div id="home-grid">
-      <section id="artwork" className="tile">
-        <img
-          src={require("./images/Mocha.jpg")}
-          className="nav-img"
-          alt="thumbnail of a red mochapot"
-        />
-        <h2>Artwork and Style</h2>
-      </section>
+      <Link className="Link" to={"/Artwork"}>
+        <section id="artwork" className="tile">
+          <img
+            src={require("./images/Mocha.jpg")}
+            className="nav-img"
+            alt="thumbnail of a red mochapot"
+          />
+          <h2>Artwork and Style</h2>
+        </section>
+      </Link>
       <section id="software-development" className="tile">
         <img
           src={require("./images/hair-serum-bottle copy.jpeg")}

@@ -8,6 +8,11 @@ body {
   margin: 0;
 }
 
+.Link {
+  text-decoration: none;
+  color: black;
+}
+
 #hero-img {
   width: 100%;
   margin: 0%;
