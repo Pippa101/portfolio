@@ -23,7 +23,7 @@ const Homepage = () => {
           className="nav-img"
           alt="portrait of Author"
         />
-        <h2>About</h2>
+        <h2>About Me</h2>
       </section>
     </div>
   );
