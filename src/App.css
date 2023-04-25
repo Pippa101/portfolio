@@ -2,6 +2,7 @@
   text-align: center;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  box-sizing: border-box;
 }
 
 body {
@@ -11,12 +12,30 @@ body {
 .Link {
   text-decoration: none;
   color: black;
+  margin: 0;
+  padding: 0;
 }
 
 #hero-img {
   width: 100%;
   margin: 0%;
-  margin-bottom: 20px;
+}
+
+#navbar ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: space-around;
+  background-color: rgb(201, 214, 244);
+  padding: 30px 0px;
+  margin: auto;
+  color: #174c4f;
+  font-size: larger;
+  font-weight: bold;
+}
+
+#navbar ul li:hover {
+  color: #dcb12f;
 }
 
 .tile {
@@ -33,27 +52,113 @@ body {
 #artwork {
   grid-area: art-section;
   margin-top: 30px;
+  margin-bottom: 0;
 }
 
 #software-development {
   grid-area: dev-section;
 }
 
+#software-development img {
+  height: 256px;
+}
+
 #about {
   grid-area: about-section;
 }
 
+#art-extra-info {
+  grid-area: art-extra-info;
+}
+
+#dev-extra-info {
+  grid-area: dev-extra-info;
+}
+
+@media (max-width: 600px) {
+  #art-extra-info {
+    display: none;
+  }
+  #dev-extra-info {
+    display: none;
+  }
+  #navbar {
+    display: none;
+  }
+  #home-grid {
+    row-gap: 20px;
+    grid-template-areas:
+      "art-section"
+      "dev-section"
+      "about-section";
+  }
+  #about article p {
+    display: none;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 999px) {
+  #art-extra-info {
+    display: none;
+  }
+  #dev-extra-info {
+    display: none;
+  }
+  #home-grid {
+    grid-template-areas:
+      "art-section dev-section"
+      "about-section about-section";
+    column-gap: 20px;
+    row-gap: 20px;
+  }
+  #software-development {
+    margin-top: 30px;
+  }
+  #about {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+
+  #about article {
+    width: 250px;
+    text-align: left;
+  }
+}
+
+@media (min-width: 1000px) {
+  #home-grid {
+    grid-template-areas:
+      "art-section art-extra-info"
+      "dev-extra-info dev-section"
+      "about-section about-section";
+    gap: 70px;
+    justify-items: stretch;
+  }
+
+  #artwork {
+    margin-top: 70px;
+    margin-bottom: 0;
+  }
+
+  #about {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .extra-info {
+    margin: auto;
+    width: 400px;
+    text-align: left;
+  }
+}
+
 #home-grid {
-  justify-items: center;
-  justify-content: space-around;
   display: inline-grid;
   grid-template-columns: auto;
   grid-template-rows: auto;
-  grid-template-areas:
-    "art-section"
-    "dev-section"
-    "about-section";
-  row-gap: 50px;
+  justify-content: space-around;
 }
 
 .nav-img {
